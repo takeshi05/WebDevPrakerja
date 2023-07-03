@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Hitung Mundur Maju</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #0f0;
+        font-family: monospace;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      #countdown {
+        font-size: 50px;
+        padding: 20px;
+        margin: 20px;
+        border: 2px solid #0f0;
+      }
+
+      button {
+        background-color: #0f0;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hitung Mundur Maju</h1>
+    <div id="countdown"></div>
+    <button onclick="maju()">Maju</button>
+    <button onclick="mundur()">Mundur</button>
+
+    <script>
+      var i = 0; // Nilai awal hitungan
+      var countdownElem = document.getElementById('countdown'); // Mendapatkan elemen HTML untuk menampilkan hitungan
+      var interval; // Variabel interval untuk mengontrol setInterval
+
+      // Fungsi hitung mundur
+      function mundur() {
+        clearInterval(interval); // Hentikan interval sebelumnya (jika ada)
+        countdownElem.innerHTML = i; // Tampilkan nilai hitungan awal
+
+        interval = setInterval(function() {
+          i--; // Kurangi nilai hitungan
+          countdownElem.innerHTML = i; // Tampilkan nilai hitungan
+
+          if (i === 0) {
+            clearInterval(interval); // Hentikan interval saat hitungan mencapai 0
+            countdownElem.innerHTML = "Selesai!";
+          }
+        }, 1000); // Interval waktu dalam milidetik (di sini, setiap 1 detik)
+      }
+
+      // Fungsi hitung maju
+      function maju() {
+        clearInterval(interval); // Hentikan interval sebelumnya (jika ada)
+        countdownElem.innerHTML = i; // Tampilkan nilai hitungan awal
+
+        interval = setInterval(function() {
+          i++; // Tambah nilai hitungan
+          countdownElem.innerHTML = i; // Tampilkan nilai hitungan
+        }, 1000); // Interval waktu dalam milidetik (di sini, setiap 1 detik)
+      }
+
+      // Tampilkan pesan saat halaman dimuat
+      window.onload = function() {
+        alert("Kode di bawah milik DIMAS ALFA PRATAMA");
+      };
+    </script>
+  </body>
+</html>

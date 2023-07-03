@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Hacker Terminal Theme</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: monospace;
+    }
+
+pre {
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: color 1s;
+}
+  </style>
+</head>
+<body>
+  <div>
+    <pre id="myParagraph1"> > Dimas Alfa Pratama Dimas Alfa Pratama Dimas Alfa Pratama </pre>
+    <pre id="myParagraph2"> > Dimas Alfa Pratama Dimas Alfa Pratama Dimas Alfa Pratama  </pre>
+    <pre id="myParagraph3"> > Dimas Alfa Pratama Dimas Alfa Pratama Dimas Alfa Pratama 
+  </div>
+
+  <script>
+    var paragraphs = document.querySelectorAll("pre");
+    var colors = ["#ff2600", "#ff9600", "#ffea00", "#00ff00", "#0008ff", "#8f00ff", "#ff00e1"]; // Daftar warna pelangi
+
+    function changeColor() {
+      paragraphs.forEach(function(paragraph) {
+        var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Memilih warna acak dari daftar warna
+        paragraph.style.color = randomColor; // Mengubah warna teks paragraf
+
+        // Menjalankan animasi selama 1 detik (1000 ms)
+        setTimeout(function() {
+          paragraph.style.color = ""; // Mengembalikan warna teks ke warna aslinya
+        }, 2000);
+      });
+    }
+
+    // Memulai animasi dengan memanggil fungsi changeColor() setiap 2 detik (2000 ms)
+    setInterval(changeColor, 1000);
+  </script>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas dan Keliling Lingkaran</title>
+    <style>
+        body {
+            background-color: #1d1d1d;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .input-container {
+            margin-bottom: 10px;
+        }
+        
+        .input-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+        }
+        
+        .button-container {
+            text-align: center;
+        }
+        
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00b3ff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        #steps {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perhitungan Luas dan Keliling Lingkaran</h1>
+    
+    <div class="input-container">
+        <label for="radius">Jari-Jari Lingkaran:</label>
+        <input type="number" id="radius" placeholder="Masukkan jari-jari">
+    </div>
+
+    <div class="button-container">
+        <button onclick="hitung()">Hasil Kalkulasi</button>
+    </div>
+
+    <div id="result"></div>
+    <div id="steps"></div>
+
+    <script>
+        function hitung() {
+            var radius = document.getElementById("radius").value;
+
+            if (!radius || radius <= 0 || isNaN(radius)) {
+                alert("Yang bener ngisinya Goblok!");
+                return;
+            }
+
+            var luas = Math.PI * radius * radius;
+            var keliling = 2 * Math.PI * radius;
+
+            document.getElementById("result").innerHTML = "Luas Lingkaran: " + luas.toFixed(2) + "<br>Keliling Lingkaran: " + keliling.toFixed(2);
+
+            var steps = "<p>Langkah-langkah kalkulasi:</p>";
+            steps += "<ol>";
+            steps += "<li>Gunakan rumus luas lingkaran: Luas = π * r * r</li>";
+            steps += "<p><li>Substitusikan nilai jari-jari (r) dengan nilai yang dimasukkan</li></p>";
+            steps += "<p><li>Hitung luas dengan melakukan perkalian</li></p>";
+            steps += "<p><li>Gunakan rumus keliling lingkaran: Keliling = 2 * π * r</li></p>";
+            steps += "<p><li>Substitusikan nilai jari-jari (      r) dengan nilai yang dimasukkan</li></p>";
+steps += "<p><li>Hitung keliling dengan melakukan perkalian dan penjumlahan</li></p>";
+steps += "<p><li>Tampilkan hasil luas dan keliling lingkaran</li></p>";
+steps += "</ol>";
+
+document.getElementById("steps").innerHTML = steps;
+}
+</script>
+
+<script>
+    console.log = function() {};
+</script>
+
+<script>
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        alert("Tindakan menyalin teks tidak diizinkan.");
+    });
+</script>
+
+</body>
+</html>

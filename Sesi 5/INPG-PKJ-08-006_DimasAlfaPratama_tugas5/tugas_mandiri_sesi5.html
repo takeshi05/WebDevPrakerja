@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Looping Tugas Mandiri Sesi 5</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #0f0;
+        font-family: monospace;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 50px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      label {
+        color: #0f0;
+
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        background-color: #000;
+        color: #0f0;
+        border: 1px solid #0f0;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      button {
+        background-color: #0f0;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      ol {
+        list-style-type: decimal;
+        padding-left: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        color: #0f0;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+ .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #000;
+        color: #0f0;
+        text-align: center;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 14px;
+
+    </style>
+  </head>
+  <body>
+    <h1>LOOPING TUGAS MANDIRI SESI 5</h1>
+    <label for="text-input">PESAN:</label>
+    <input type="text" id="text-input" placeholder="Masukkan pesan" />
+    <br />
+    <label for="number-input">BERAPA KALI DIULANG:</label>
+    <input type="number" id="number-input" min="1" max="10000" />
+    <br />
+    <button onclick="startLoop()">Mulai Looping</button>
+    <br />
+    <ol id="output-list"></ol>
+
+    <div class="footer" id="footer">
+      <!-- Footer akan ditambahkan melalui JavaScript -->
+    </div>
+
+    <script>
+      // Fungsi untuk membuat footer
+      function createFooter() {
+        var footerElement = document.getElementById("footer");
+
+        // Buat elemen paragraf untuk teks footer
+        var paragraph = document.createElement("p");
+        paragraph.textContent = "2023 TUGAS 5. Dimas Alfa Pratama.";
+
+        // Tambahkan elemen paragraf ke footer
+        footerElement.appendChild(paragraph);
+      }
+
+      // Panggil fungsi createFooter untuk membuat footer
+      createFooter();
+    </script>
+
+    <script>
+      function startLoop() {
+        var message = document.getElementById("text-input").value;
+        var count = parseInt(document.getElementById("number-input").value);
+        var outputList = document.getElementById("output-list");
+
+        outputList.innerHTML = ""; // Menghapus isi list sebelumnya (jika ada)
+
+        for (var i = 1; i <= count; i++) {
+          var li = document.createElement("li");
+          li.textContent = i + ". " + message; // Menambahkan nomor pada pesan
+          outputList.appendChild(li);
+        }
+      }
+
+      window.onload = function() {
+        alert("Kode di bawah milik DIMAS ALFA PRATAMA");
+      };
+
+    </script>
+  </body>
+</html>

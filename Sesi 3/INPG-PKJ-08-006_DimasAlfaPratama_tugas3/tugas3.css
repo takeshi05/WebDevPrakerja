@@ -1,0 +1,116 @@
+html {
+  background-color: aliceblue;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 20px 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  padding: 6px;
+}
+
+nav ul li a:hover {
+  background-color: aliceblue;
+}
+
+section {
+  margin: 20px;
+}
+
+form {
+  background-color: white;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+form input[type="submit"] {
+  margin: 0;
+  background-color: green;
+  color: white;
+  border:2px solid black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid orange;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+background-color: white;
+}
+
+.gray-text {
+  color: gray;
+}
+
+.profile-photo {
+  margin-right: 10px;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-text h1,
+.profile-text h3 {
+  margin: 10;
+}
+
+.action {
+  display: flex;
+  margin:10;
+}
+
+.blue-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+  }
+
+.line-resume{
+    background-color: white;
+    color: green;
+    padding: 10px 20px;
+    border: 1px solid green;
+    border-radius: 15px;
+  }
+
+
+#detail table {
+  position: absolute;
+  top: 100;
+  left: 500;
+
+}
+
